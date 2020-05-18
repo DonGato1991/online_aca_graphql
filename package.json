@@ -1,0 +1,19 @@
+{
+  "name": "onlineacademy",
+  "version": "1.0.0",
+  "description": "Online-Academy, GraphQL, Excercise-2",
+  "main": "build/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonGato1991/online_aca_graphql.git"
+  },
+  "author": "Juan Caspi <juan.caspi7@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DonGato1991/online_aca_graphql/issues"
+  },
+  "homepage": "https://github.com/DonGato1991/online_aca_graphql#readme"
+}
