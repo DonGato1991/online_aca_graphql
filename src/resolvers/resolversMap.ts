@@ -2,9 +2,7 @@ import { IResolvers } from "graphql-tools";
 import query from "./query";
 
 const resolversMap: IResolvers = {
-  Query: {
-    ...query,
-  },
+  ...query
 };
 
 export default resolversMap;
