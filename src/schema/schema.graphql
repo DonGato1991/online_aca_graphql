@@ -2,7 +2,9 @@ type Query{
     "Lista de los estudiantes de la academia"
     estudiantes: [Estudiante!]!,
     "Información de un estudiante en específico por el ID"
-    estudiante(id:ID):Estudiante!
+    estudiante(id:ID):Estudiante!,
+    "Lista de los cursos de la academia"
+    cursos: [Curso!]!
 }
 
 type Estudiante{
