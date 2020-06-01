@@ -38,6 +38,18 @@ type Curso{
     reviews: [Valoracion!]!
 }
 
+input CursoInput{
+    id: ID
+    title: String!
+    description: String!
+    clases: Int!
+    time: Float!
+    logo: String!
+    level: Nivel=ALL
+    path: String!
+    teacher: String!
+}
+
 type Valoracion{
     id:ID!
     name: String!
