@@ -16,8 +16,22 @@ const mutation: IResolvers ={
                 teacher: curso.teacher,
                 reviews: []
             }
-            database.cursos.push(itemNuevo);
+            if (database.cursos.filter(itemCur=>itemCur.title === itemNuevo.title).length ===0) {
+                database.cursos.push(itemNuevo);
             return itemNuevo;
+            }
+            return {
+                id: "-1",
+                title: 'Curso ya se encuentra registrado',                
+                description: '',
+                clases: 0,
+                time: 0.0,
+                logo: '',
+                level: 'ALL',
+                path: '',
+                teacher: '',
+                reviews: []
+            };
         }
     }
 }
