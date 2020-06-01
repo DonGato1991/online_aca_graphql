@@ -56,6 +56,26 @@ const mutation: IResolvers ={
                 teacher: '',
                 reviews: []
             };
+        },
+        eliminarCurso(__: void, { id }):any{
+            const eliminado = _.remove(database.cursos, function(curso){
+                return curso.id === id;
+            });
+            if (eliminado[0]!== undefined) {
+                return eliminado[0];
+            }
+            return {
+                id: "-1",
+                title: `Curso con el ID ${id} no existe`,
+                description: '',
+                clases: 0,
+                time: 0.0,
+                logo: '',
+                level: 'ALL',
+                path: '',
+                teacher: '',
+                reviews: []
+            };
         }
     }
 }

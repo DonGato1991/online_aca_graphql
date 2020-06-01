@@ -12,7 +12,7 @@ type Query{
 type Mutation{
     crearCurso(curso: CursoInput!): Curso!,
     modificarCurso(curso: CursoInput!): Curso!,
-    eliminarCurso(id: ID): Curso!
+    eliminarCurso(id: ID!): Curso!
 }
 
 type Estudiante{
