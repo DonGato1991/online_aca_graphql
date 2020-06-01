@@ -4,7 +4,9 @@ type Query{
     "Información de un estudiante en específico por el ID"
     estudiante(id:ID):Estudiante!,
     "Lista de los cursos de la academia"
-    cursos: [Curso!]!
+    cursos: [Curso!]!,
+    "Información de un curso en específico por el ID"
+    curso(id:ID):Curso!
 }
 
 type Estudiante{
@@ -38,8 +40,8 @@ type Valoracion{
 }
 
 enum Nivel{
-    TODOS
-    NOVATOS
-    INTERMEDIO
-    EXPERTO
+    ALL
+    BEGINNER
+    MEDIUM
+    EXPERT
 }

@@ -21,6 +21,24 @@ const query: IResolvers ={
         cursos():any {
             return database.cursos;
         },
+        curso(__: void, {id}):any{
+            const resultado = database.cursos.filter(curso=>curso.id=== id)[0];
+            if (resultado === undefined) {
+                return {
+                    id: -1,
+                    title: `No se ha encontrado el curso con el ID ${id}`,
+                    description: `No se ha encontrado el curso con el ID ${id}`,
+                    clases: 0,
+                    time: 0,
+                    logo: '',
+                    level: 'ALL',
+                    path: '',
+                    teacher: '',                    
+                    reviews: []
+                }
+            }
+            return resultado;
+        }
     }
 }
 
