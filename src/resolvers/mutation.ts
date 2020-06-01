@@ -1,5 +1,6 @@
 import { IResolvers } from 'graphql-tools';
 import { database } from '../data/data.store';
+import _ from 'lodash';
 
 const mutation: IResolvers ={
     Mutation:{
@@ -23,6 +24,29 @@ const mutation: IResolvers ={
             return {
                 id: "-1",
                 title: 'Curso ya se encuentra registrado',                
+                description: '',
+                clases: 0,
+                time: 0.0,
+                logo: '',
+                level: 'ALL',
+                path: '',
+                teacher: '',
+                reviews: []
+            };
+        },
+        modificarCurso(__: void, { curso }):any{
+            const elementoRepetido = _.findIndex(database.cursos, function(o){
+                return o.id === curso.id;
+            });
+            if (elementoRepetido>-1) {
+                const valoraciones = database.cursos[elementoRepetido].reviews;
+                curso.reviews = valoraciones;
+                database.cursos[elementoRepetido] = curso;
+                return curso;
+            }
+            return {
+                id: "-1",
+                title: `Curso con el ID ${curso.id} no existe`,
                 description: '',
                 clases: 0,
                 time: 0.0,
