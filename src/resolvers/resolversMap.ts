@@ -7,6 +7,6 @@ const resolversMap: IResolvers = {
   ...query,
   ...mutation,
   ...type
-};
+}
 
 export default resolversMap;
