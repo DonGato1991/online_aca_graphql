@@ -12,3 +12,5 @@ Entities used in this example
 - Curso
 
 For more detail you can view schema definition graphQL.
+
+If not run, problably need install typescript and ts-node as global dependency
