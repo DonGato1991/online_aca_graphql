@@ -24,7 +24,7 @@ app.get(
   })
 );
 
-const PORT = "5300";
+const PORT = process.env.PORT || "5300";
 
 const httpServer = createServer(app);
 httpServer.listen({ port: PORT }, () =>
